@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "users/index", type: :view do
-  let(:users) { create_list(:user, 2)}
+  let(:users) { create_list(:user, 2) }
 
   before do
     assign(:users, users)

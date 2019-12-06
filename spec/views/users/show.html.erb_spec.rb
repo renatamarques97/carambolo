@@ -5,9 +5,17 @@ RSpec.describe "users/show", type: :view do
     @user = assign(:user, create(:user, name: 'Nicolas Gleiser', email: 'valid@email.com'))
   end
 
-  it "renders attributes in <p>" do
+  before do
     render
-    expect(rendered).to match(/Nicolas Gleiser/)
-    expect(rendered).to match(/valid@email.com/)
+  end
+
+  context "renders attributes in <p>" do
+    it "expect correct username" do
+      expect(rendered).to match(/Nicolas Gleiser/)
+    end
+
+    it "expect correct email" do
+      expect(rendered).to match(/valid@email.com/)
+    end
   end
 end

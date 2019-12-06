@@ -6,9 +6,17 @@ RSpec.describe "entries/show", type: :view do
     @entry = assign(:entry, entry)
   end
 
-  it "renders attributes in <p>" do
+  before do
     render
-    expect(rendered).to match(/Feeling/)
-    expect(rendered).to match(/MyText/)
+  end
+
+  context "renders attributes in <p>" do
+    it "expect correct feeling" do
+      expect(rendered).to match(/Feeling/)
+    end
+
+    it "expect correct description" do
+      expect(rendered).to match(/MyText/)
+    end
   end
 end

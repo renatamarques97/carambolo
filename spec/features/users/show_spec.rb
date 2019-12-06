@@ -9,10 +9,18 @@ describe 'user information page', type: :feature do
     )
   end
 
-  it 'display users information' do
+  before do
     visit user_path(user)
-
-    expect(page).to have_content 'Joseph Matheus'
-    expect(page).to have_content 'valid@email.com'
   end
+
+  context "display users information" do
+    it 'display correct username' do
+      expect(page).to have_content 'Joseph Matheus'
+    end
+
+    it 'display correct email' do
+      expect(page).to have_content 'valid@email.com'
+    end
+  end
+
 end
